@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
-
+#include "List.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+   
+	List<int> list(3);
+	list[0] = 1;
+	std::cout << list[0];
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
