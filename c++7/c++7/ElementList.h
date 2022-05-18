@@ -6,14 +6,24 @@ class ElementList
 public:
 	ElementList* NextElement;
 	type data;
-	int number;
-	ElementList(int number) {
-		NextElement = NULL;
-		this->number = number;
+
+	ElementList() {
+		this->NextElement = NULL;
 	}
-	~ElementList() {
-		delete NextElement;
+	ElementList(ElementList& nextElement) {
+		this->NextElement = nextElement;
 	}
-	type& operator = (ElementList&);
+	ElementList(type data, ElementList* nextElement ) {
+		this->data = data;
+		this->NextElement = nextElement;
+	}
+	
+
+	/*type& operator =(ElementList rightElement)
+	{
+		data = rightElement.data;
+		return (*this);
+
+	}*/
 };
 

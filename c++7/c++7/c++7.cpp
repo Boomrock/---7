@@ -2,13 +2,17 @@
 //
 
 #include <iostream>
-#include "List.h"
+#include "List.cpp"
+using namespace std;
 int main()
 {
    
-	List<int> list(3);
-	list[0] = 1;
-	std::cout << list[0];
+	List<int> list;
+	list.addElement(3);
+	cout << list[0];
+	list.deleteElement(0);
+	list.addElement(4);
+	cout << list[0];
 
 }
 
