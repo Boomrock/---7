@@ -7,6 +7,7 @@ class List
 	int numberCurrent;
 	ElementList<type>* current;
 	ElementList<type>* last;
+	void moveCurrentOnPosition(int number);
 public:
 	List() {
 
@@ -29,6 +30,7 @@ public:
 		for (int i = 1; i < Size; i++)
 		{
 			current->NextElement = new ElementList<type>();
+			current = current->NextElement;
 		}
 		current->NextElement = header;
 		last = current;
@@ -49,23 +51,17 @@ public:
 	type& operator [](int n) {
 		if (n > size)
 			throw "going beyond the borders";
+		else if (n < numberCurrent) {
+			current = last;
+			numberCurrent = size - 1;
+		}
+		moveCurrentOnPosition(n);
 
-		do
-		 {
-
-			if (numberCurrent < size) {
-				current = current->NextElement;
-				numberCurrent++;
-			}
-			else {
-				numberCurrent = 0;
-			}
-
-		} while (numberCurrent != n);
 		return current->data;
 	}
-	void addElement(type);
-	void deleteElement(int);
+	void addElement(type data);
+	void deleteElement(int number);
+
 	int GetSize() {
 		return size;
 	}

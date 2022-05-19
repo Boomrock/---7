@@ -7,13 +7,6 @@ using namespace std;
 int main()
 {
    
-	List<int> list;
-	list.addElement(3);
-	cout << list[0];
-	list.deleteElement(0);
-	list.addElement(4);
-	cout << list[0];
-
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
