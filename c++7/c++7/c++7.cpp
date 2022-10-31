@@ -6,7 +6,15 @@
 using namespace std;
 int main()
 {
-   
+	List<string> a(0);
+	for (int i = 9; i >= 0; i--)
+	{
+		a.addElement(" awdawd");
+	}
+	for (int i = 0; i < a.GetSize(); i++)
+	{
+		cout << a[i];
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
